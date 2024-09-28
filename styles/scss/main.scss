@@ -1,0 +1,320 @@
+@forward "./base/_index.scss";
+@forward "./section/contact";
+@forward "./section/commercial-service";
+@forward "./section/need-help";
+@forward "media-query";
+@use "./utils/index" as variable;
+
+// .text {
+//   color: variable.$text-color;
+//   background-color: variable.$bg-color;
+// }
+
+// nav {
+//   margin-top: 20px;
+//   ul {
+//     list-style-type: none;
+//     li {
+//       display: inline-block;
+//       margin: 0 15px;
+//       a {
+//         text-decoration: none;
+//         color: green;
+//       }
+//       a:hover {
+//         color: black;
+//       }
+//     }
+//   }
+// }
+
+// @mixin para-style($color) {
+//   font-size: 16px;
+//   background-color: $color;
+// }
+
+// .para {
+//   @include para-style(red);
+//   font-weight: 600;
+// }
+// .para2 {
+//   @include para-style(green);
+//   font-weight: 600;
+// }
+
+// .btn {
+//   padding: 10px 15px;
+// }
+
+// .btn-1 {
+//   @extend .btn;
+//   background-color: red;
+// }
+// .btn-2 {
+//   background-color: green;
+//   @extend .btn;
+// }
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+// ..........our complete section..........
+
+.headline {
+  display: flex;
+  padding: 7px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(45, 54, 67, 0.08), 0px 1px 2px 0px rgba(45, 54, 67, 0.04);
+}
+.headline-title {
+  color: #515151;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.border-up {
+  width: 16px;
+  height: 1px;
+  background: #204af4;
+}
+.border-down {
+  width: 27px;
+  height: 1px;
+  background: #204af4;
+}
+@mixin headline-border($position) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: $position;
+}
+
+.headline-border-left {
+  @include headline-border(flex-end);
+}
+
+.headline-border-right {
+  @include headline-border(flex-start);
+}
+
+.our_complete_section {
+  background: variable.$bg-gray;
+  padding: 100px 0;
+  .our_complete_section_headline {
+    @extend .headline;
+    width: 240px;
+    margin: 0 auto;
+  }
+  .our_complete_section_title {
+    color: variable.$text-black;
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 74px;
+    margin-top: 12px;
+  }
+  .our_complete_section_sub_title {
+    color: #bba5e0;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 74px;
+    text-align: center;
+  }
+
+  .our_complete_section_steps {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    .step-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      .step-card_content {
+        color: variable.$text-black;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        width: 217px;
+        height: 110.529px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 6px;
+      }
+      .step-card_number {
+        color: variable.$text-primary;
+        font-family: Poppins;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .step-card_number_label {
+        color: rgba(38, 37, 46, 0.7);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+//.............our toolset section headline..........
+
+.our_toolset_section {
+  padding: 100px 0;
+  .our_toolset_section_headline {
+    @extend .headline;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+  .our_toolset_section_title {
+    .our_toolset_section_title_content {
+      color: variable.$text-black;
+      text-align: center;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 74px;
+    }
+    .our_toolset_section_title_down {
+      display: flex;
+      justify-content: center;
+
+      .dot-squre {
+        color: variable.$text-primary;
+        width: 10px;
+        height: 10px;
+        background-color: variable.$text-primary;
+        margin-top: 50px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .our_toolset_tab_section {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 80px;
+    .tabs {
+      display: flex;
+      .tab_active {
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+        .tab_active_content {
+          z-index: 20;
+          top: 16px;
+          left: 20px;
+          position: absolute;
+          color: #fff;
+          text-align: center;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 26px;
+        }
+      }
+      .tab_inactive {
+        margin-left: -30px;
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+        .tab_inactive_content {
+          position: absolute;
+          top: 15px;
+          left: 30px;
+          color: variable.$text-black;
+          text-align: center;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 26px;
+        }
+      }
+    }
+    .skills {
+      background-color: variable.$bg-gray;
+      padding: 40px 50px;
+      margin-top: -10px;
+      border-radius: 8px;
+      .skills-item {
+        width: 119px;
+        height: 119px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0px 4px 8px -2px rgba(45, 54, 67, 0.08), 0px 2px 4px -2px rgba(45, 54, 67, 0.06);
+        .skills-item_content {
+          color: rgba(38, 37, 46, 0.7);
+          text-align: center;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px;
+          margin-top: 8px;
+        }
+      }
+      .skills-items-up {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .skills-items-down {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    }
+  }
+}
+
+//.............Electricty Life Easiest section..........
+
+.our_electricty_life_easiest_section {
+  background-color: variable.$bg-light-gray;
+  padding: 40px 0;
+  position: relative;
+  .left_img img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    bottom: 50%;
+  }
+  .left {
+    .left-up-link {
+      display: flex;
+    }
+  }
+}
